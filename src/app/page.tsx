@@ -1,95 +1,284 @@
+"use client"; 
 import Image from "next/image";
-import styles from "./page.module.css";
+import Head from 'next/head';
+import styles from "./style.module.scss";
+import { useState } from 'react';
+import Link from 'next/link';
 
 export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+    return (
+        <section className="sectionSpace">
+            <div className={styles.container}>
+                <Head>
+                    <title>LifeLink.SG - Make a lasting legacy</title>
+                    <meta name="description" content="Singapore Blood Donation Community" />
+                </Head>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+                <header className={styles.header} >
+                    <div className={styles.headerContent}>
+                        <div className={styles.logo}>
+                            {/* Replace with actual logo */}
+                            <Image
+                                src="/SGLogo.svg" // Save the first image as lifelink-logo.png
+                                alt="LifeLink.SG"
+                                width={120}
+                                height={30}
+                                className={styles.logo}
+                            />
+                        </div>
+                        <button
+                            className={styles.menuToggle}
+                            onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        >
+                            ☰
+                        </button>
+                        <nav className={`${styles.nav} ${isMenuOpen ? styles.active : ''}`}>
+                            <Link href="/">Home</Link>
+                            <Link href="/why-give-blood">Why give blood</Link>
+                            <Link href="/who-can-give">Who can give blood</Link>
+                            <Link href="/donation-process">The donation process</Link>
+                            <Link href="/where-to-donate">Where to donate</Link>
+                            <Link href="/about">About us</Link>
+                            <button className={styles.loginBtn}>Sign up/Login</button>
+                        </nav>
+                    </div>
+                </header>
+
+                <main>
+                    {/* Hero Section */}
+                    <section className={styles.hero}>
+                        <div className={styles.heroContent}>
+                            <div className={styles.heroLeft}>
+                                <div className={styles.dropletContainer}>
+                                    <Image
+                                        src="/Vector.png" // Save the droplet logo image
+                                        alt="Blood droplet logo"
+                                        width={48}
+                                        height={48}
+                                        className={styles.dropletLogo}
+                                    />
+                                </div>
+                                <h1>
+                                    Make a <span className={styles.red}>lasting</span> legacy
+                                </h1>
+                                <p>It's often the smallest threads that weave the most profound stories. We invite you to discover the extraordinary power hidden within the simplicity of everday acts .</p>
+                                <button className={styles.redBtn}>Find out more</button>
+                            </div>
+                            <div className={styles.heroRight}>
+                                <div className={styles.imageContainer}>
+                                    <Image
+                                        src="/legacy1.svg"
+                                        alt="Blood donor smiling"
+                                        layout="responsive"
+                                        width={500}
+                                        height={500}
+                                        className={styles.heroImage}
+                                        priority
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Mission Section */}
+                    <section className={styles.mission}>
+                        <p style={{ fontSize: '2rem' }}>Our mission is to bring together a community so we can find and maintain Singapore's blood supply in the movement to save lives.</p>
+                    </section>
+
+                    {/* Insights Section */}
+                    <section className={styles.insights}>
+                        <div className={styles.sectionHeader}>
+                            <h2>Insights and Impact</h2>
+                            <button className={styles.rightArrow}>→</button>
+                        </div>
+                        <div className={styles.insightCards}>
+                            <div className={styles.card}>
+                                <Image
+                                    src="/caro1.svg" // Replace with actual image
+                                    alt="Personal stories from recipients"
+                                    width={300}
+                                    height={200}
+                                    objectFit="cover"
+                                />
+                                <h3>The human side of blood donation: Personal stories from recipients</h3>
+                                <small>07 Jan 2025</small>
+                            </div>
+                            <div className={styles.card}>
+                                <Image
+                                    src="/caro2.svg" // Replace with actual image
+                                    alt="Emergency preparedness"
+                                    width={300}
+                                    height={200}
+                                    objectFit="cover"
+                                />
+                                <h3>Emergency preparedness: Blood reserves and disasters response</h3>
+                                <small>28 Dec 2024</small>
+                            </div>
+                            <div className={styles.card}>
+                                <Image
+                                    src="/caro3.svg" // Replace with actual image
+                                    alt="Blood products"
+                                    width={300}
+                                    height={200}
+                                    objectFit="cover"
+                                />
+                                <h3>Blood products: How does it help patients with unique needs</h3>
+                                <small>04 Dec 2024</small>
+                                {/* <div className={styles.cardIcons}>
+                                    <span className={styles.redDot}></span>
+                                    <span className={styles.sunIcon}></span>
+                                </div> */}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Stats Section */}
+                    <section className={styles.stats}>
+                        <h2 className={styles.redText}>
+                            Every hour of the day, 15 unit of bloods are used in Singapore...
+                            <span>your donation could be the one that saves a life.</span>
+                        </h2>
+                        <div className={styles.statsGrid}>
+                            <div className={styles.statItem}>
+                                <h3>90</h3>
+                                <p>units</p>
+                                <small>are collected every 3 hours</small>
+                            </div>
+                            <div className={styles.statItem}>
+                                <h3>360</h3>
+                                <p>units</p>
+                                <small>are needed daily</small>
+                            </div>
+                            <div className={styles.statItem}>
+                                <h3>14,000</h3>
+                                <p>patients</p>
+                                <small>receive blood products and blood-derived treatment</small>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Blood Types Section */}
+                    <section className={styles.bloodTypes}>
+                        <h2>Give blood. Save lives.</h2>
+                        <p>Blood is needed to save lives in times of emergencies and to sustain the lives of those with medical conditions, like leukemia, thalassemia and bleeding disorders, as well as patients who are undergoing major surgeries. For many patients, blood donors are their lifeline. One unit of blood can save three lives!</p>
+
+                        <div className={styles.bloodGrid}>
+                            <Image
+                                src="/bloodbank1.svg" // Replace with actual image
+                                alt="Blood products"
+                                width={1000}
+                                height={700}
+                                objectFit="cover"
+                            />
+                        </div>
+
+                        <div className={styles.bloodButtons}>
+                            <button className={styles.redBtn}>Donate now</button>
+                            <button className={styles.outlineBtn}>Where to donate?</button>
+                        </div>
+                    </section>
+
+                    {/* Usage Stats Section */}
+                    <section className={styles.usageStats}>
+                        <h2>Where has the collected blood been used?</h2>
+                        <div className={styles.usageGrid}>
+                            <div className={styles.usageItem}>
+                                <h3>54<span>%</span></h3>
+                                <p>General surgery</p>
+                            </div>
+                            <div className={styles.usageItem}>
+                                <h3>31<span>%</span></h3>
+                                <p>General medicine</p>
+                            </div>
+                            <div className={styles.usageItem}>
+                                <h3>9<span>%</span></h3>
+                                <p>Haematology</p>
+                            </div>
+                            <div className={styles.usageItem}>
+                                <h3>6<span>%</span></h3>
+                                <p>Accidents and emergencies</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* Locations Section */}
+                    <section className={styles.locations}>
+                        <div className={styles.sectionHeader}>
+                            <h2>Locations</h2>
+                            <button className={styles.rightArrow}>→</button>
+                        </div>
+                        <div className={styles.locationCards}>
+                            <div className={styles.locationCard}>
+                                <Image
+                                    src="/Location1.png" // Replace with actual image
+                                    alt="Bloodbank @ HSA"
+                                    width={350}
+                                    height={200}
+                                    objectFit="cover"
+                                />
+                                <h3>Bloodbank @ HSA</h3>
+                                <p>Health Sciences Authority (Opposite Outram Park MRT Station) 11 Outram Road Singapore 169078</p>
+                            </div>
+                            <div className={styles.locationCard}>
+                                <Image
+                                    src="/Location2.png" // Replace with actual image
+                                    alt="Bloodbank @ Dhoby Ghaut"
+                                    width={350}
+                                    height={200}
+                                    objectFit="cover"
+                                />
+                                <h3>Bloodbank @ Dhoby Ghaut</h3>
+                                <p>Dhoby Ghaut MRT Station, Dhoby Xchange (Near Exit B), 11 Orchard Road, #B1-01 to #B1-09, Singapore 238826</p>
+                            </div>
+                            <div className={styles.locationCard}>
+                                <Image
+                                    src="/Location3.png" // Replace with actual image
+                                    alt="Bloodbank @ Woodlands"
+                                    width={350}
+                                    height={200}
+                                    objectFit="cover"
+                                />
+                                <h3>Bloodbank @ Woodlands</h3>
+                                <p>Woodlands Civic Centre (Opposite Causeway Point) 900 South Woodlands Drive #05-07 Singapore 730900</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* CTA Section */}
+                    <section className={styles.cta}>
+                        <h2>Donate blood, save lives.</h2>
+                        <p>Your contribution matters and donating blood is easier than you think!</p>
+                        <div className={styles.ctaButtons}>
+                            <button className={styles.redBtn}>Donate now</button>
+                            <button className={styles.outlineBtn}>Find out more</button>
+                        </div>
+                    </section>
+                </main>
+
+                <footer className={styles.footer}>
+                    <div className={styles.footer_inner}>
+                        <div className={styles.borderTop}></div>
+                        <div className={styles.content}>
+                            <div className={styles.mainInfo}>
+                                <div className={styles.brand}>LifeLink.SG</div>
+                                <div className={styles.phone}>You can call us on: 6000 8888</div>
+                            </div>
+                            <div className={styles.topLinks}>
+                                <a href="/contact">Contact</a>
+                                <a href="/feedback">Feedback</a>
+                            </div>
+                        </div>
+                        <div className={styles.links}>
+                            <a href="/report">Report Vulnerability </a>
+                            <a href="/privacy">Privacy Statement</a>
+                            <a href="/terms">Terms of use</a>
+                        </div>
+                        <div className={styles.copyright}>© 2025 LifeLink.SG</div>
+                    </div>
+                </footer>
+            </div>
+        </section>
+    );
+
 }
