@@ -1,0 +1,79 @@
+/* pages/appointment.module.css */
+.heading {
+    text-align: left;
+    margin: 20px;
+    color: #333;
+  }
+  
+  .description {
+    text-align: left;
+    margin: 20px;
+    font-size: 1.2em;
+    color: #555;
+    width: 65%;
+  }
+  
+  .block {
+    background-color: #e0e0e0;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .listItem {
+    background-color: #fff;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .continueBtn {
+    display: block;
+    width: 200px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 25px;
+    margin-top: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 0;
+  }
+  
+  .continueBtn:hover {
+    background-color: #333;
+  }
+  
+  @media (max-width: 768px) {
+    .heading {
+      font-size: 1.8em;
+    }
+  
+    .description {
+      font-size: 1em;
+    }
+  
+    .block {
+      padding: 15px;
+    }
+  
+    .listItem {
+      padding: 8px;
+    }
+  
+    .continueBtn {
+      padding: 8px 16px;
+      width: 180px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }

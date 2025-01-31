@@ -1,12 +1,12 @@
 "use client"; 
-import Image from "next/image";
 import Head from 'next/head';
-import styles from "./style.module.scss";
-import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
+import styles from './style.module.scss';
+import { useState } from 'react';
 
 export default function Home() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     return (
         <section className="sectionSpace">
             <div className={styles.container}>
@@ -35,12 +35,12 @@ export default function Home() {
                         </button>
                         <nav className={`${styles.nav} ${isMenuOpen ? styles.active : ''}`}>
                             <Link href="/">Home</Link>
-                            <Link href="/why-give-blood">Why give blood</Link>
-                            <Link href="/who-can-give">Who can give blood</Link>
-                            <Link href="/donation-process">The donation process</Link>
-                            <Link href="/where-to-donate">Where to donate</Link>
-                            <Link href="/about">About us</Link>
-                            <button className={styles.loginBtn}>Sign up/Login</button>
+                            <Link href="/">Why give blood</Link>
+                            <Link href="/appoinment">Who can give blood</Link>
+                            <Link href="/">The donation process</Link>
+                            <Link href="/">Where to donate</Link>
+                            <Link href="/">About us</Link>
+                            <Link href="/loggedin" className={styles.loginBtn}>Sign up/Login</Link>
                         </nav>
                     </div>
                 </header>
@@ -158,18 +158,46 @@ export default function Home() {
                         </div>
                     </section>
 
-                    {/* Blood Types Section */}
                     <section className={styles.bloodTypes}>
                         <h2>Give blood. Save lives.</h2>
                         <p>Blood is needed to save lives in times of emergencies and to sustain the lives of those with medical conditions, like leukemia, thalassemia and bleeding disorders, as well as patients who are undergoing major surgeries. For many patients, blood donors are their lifeline. One unit of blood can save three lives!</p>
 
-                        <div className={styles.bloodGrid}>
+                        {/* Desktop Image */}
+                        <div className={styles.desktopImage}>
                             <Image
-                                src="/bloodbank1.svg" // Replace with actual image
+                                src="/bloodbank1.svg"
                                 alt="Blood products"
                                 width={1000}
                                 height={700}
                                 objectFit="cover"
+                            />
+                        </div>
+
+                        {/* Mobile Images */}
+                        <div className={styles.mobileImages}>
+                            <Image
+                                src="/blood1.svg"
+                                alt="Blood products 1"
+                                width={300}
+                                height={100}
+                            />
+                            <Image
+                                src="/blood2.svg"
+                                alt="Blood products 2"
+                                width={300}
+                                height={100}
+                            />
+                            <Image
+                                src="/blood3.svg"
+                                alt="Blood products 3"
+                                width={300}
+                                height={100}
+                            />
+                            <Image
+                                src="/blood4.svg"
+                                alt="Blood products 3"
+                                width={300}
+                                height={100}
                             />
                         </div>
 
@@ -280,5 +308,4 @@ export default function Home() {
             </div>
         </section>
     );
-
 }
