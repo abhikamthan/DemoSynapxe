@@ -38,7 +38,7 @@
     display: block;
     width: 200px;
     padding: 10px 20px;
-    background-color: black;
+    background-color: #E83838;
     color: white;
     text-align: center;
     border: none;
@@ -50,7 +50,7 @@
   }
   
   .continueBtn:hover {
-    background-color: #333;
+    background-color: green;
   }
   
   @media (max-width: 768px) {

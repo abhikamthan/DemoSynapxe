@@ -1,352 +1,475 @@
-/* styles/BloodDonorDashboard.module.css */
+/* styles/Home.module.css */
 .container {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
+
 .header {
-    //position: fixed;
-    top: 0;
-    width: 100%;
-    background: white;
-    border-bottom: 1px solid #e5e7eb;
-    z-index: 1000;
-  }
-  
-  .headerContent {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .nav {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-  }
-  
-  .nav a {
-    text-decoration: none;
-    //color: #fff;
-    font-size: 0.875rem;
-  }
-  
-  .loginBtn {
-    background: #1d4ed8;
-    color: white;
-    padding: 0.5rem 1.5rem;
-    border-radius: 0.375rem;
-    border: none;
-    cursor: pointer;
-    font-size: 0.875rem;
-  }
-  /* Header Mobile Styles */
-  .menuToggle {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
- 
-  
-  .card {
-    width: 48%;
-    background-color: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-  }
-  
-  .eventCard {
-    display: flex;
-    align-items: center;
-  }
-  
-  .eventImage {
-    width: 50%;
-    height: auto;
-    object-fit: cover;
-  }
-  
-  .eventInfo {
-    width: 50%;
-    padding: 24px;
-  }
-  
-  .headerSmall {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-  
-  .textFaded {
-    color: #666;
-    margin-bottom: 12px;
-  }
-  
-  .eventDate {
-    margin-right: 16px;
-  }
-  
-  .eventAttendees {
-    color: #666;
-    margin-bottom: 16px;
-  }
-  
-  .buttonBlack {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    padding: 8px 16px;
-    font-size: 14px;
-    cursor: pointer;
-  }
-  
-  @media (max-width: 768px) {
-    .menuToggle {
-      display: block;
-    }
-  
-    .header {
-      position: relative; /* Add this */
-      z-index: 1000; /* Ensure header stays on top */
-    }
-  
-    .nav {
-      display: none;
-      position: fixed; /* Changed from absolute */
-      top: 60px; /* Adjust based on header height */
-      left: 0;
-      right: 0;
-      background: white;
-      flex-direction: column;
-      padding: 1rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      z-index: 999; /* Ensure it's below header but above content */
-      max-height: calc(100vh - 60px);
-      overflow-y: auto;
-      top: 70px;
-    }
-  
-    .nav.active {
-      display: flex;
-    }
-  
-    /* Add backdrop for better visibility */
-    .nav.active::after {
-     
-      position: fixed;
-      top: 60px;
-      left: 0;
-      right: 0;
-      bottom: 0;
-    }
-  }
-  
-  /* Ensure content below header has proper spacing */
-  .main {
-    position: relative;
-    z-index: 1; /* Lower than nav */
-    margin-top: 60px;
-  
-    .loginBtn {
-      margin-top: 1rem;
-    }
-  }
-  
-
-/* Rest of the CSS remains the same, just moved to a .module.css file */
-.topMenu {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: #fff;
-    padding: 15px;
-    border-bottom: 2px solid grey;
+  //position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  z-index: 1000;
 }
 
-.menuItem {
-    margin-right: 20px;
-    font-size: 18px;
-    cursor: pointer;
+.headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.fullWidthCard {
-    margin: 20px;
-    background-color: #FFE9E9;
-    padding: 40px;
-    text-align: left;
-    border-radius: 10px;
-    gap: 32px;
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
 }
 
-.headerRed {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 40px;
-    line-height: 64px;
-    color: #E60026;
+.nav a {
+  text-decoration: none;
+  //color: #fff;
+  font-size: 0.875rem;
 }
 
-.headerBlue {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 48px;
-    line-height: 64px;
-    color: #184697;
+.loginBtn {
+  background: #1d4ed8;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
 }
-
-.headerBlack {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 48px;
-    line-height: 64px;
-    color: #282829;
-}
-
-.buttonRed {
-    background-color: #E60026;
-    color: white;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 20px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 16px;
-}
-
-.description {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    line-height: 32px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.cardsContainer {
-    display: flex;
-    margin: 30px 20px;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.card {
-    padding: 20px;
-    box-sizing: border-box;
-    background-color: #F5F5F7;
-    border-radius: 10px;
-    flex: 1;
-}
-
-.btnBlack {
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    border-radius: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    line-height: 24px;
-    cursor: pointer;
-}
-
-.profileSection {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.cardHeading {
-    font-family: Helvetica;
-    font-weight: bold;
-    line-height: 40px;
-    font-size: 28px;
-}
-
-.cardText {
-    font-family: Helvetica;
-    line-height: 32px;
-    font-size: 20px;
-}
-
-.donationHeader {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 48px;
-    line-height: 56px;
-    color: black;
-}
-
-.donationHighlight {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 32px;
-    color: #184697;
-}
-
-.donationFaded {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 28px;
-    line-height: 40px;
-    color: #86868B;
-}
-
-.textFaded {
-    font-family: Helvetica;
-    line-height: 24px;
-    font-size: 18px;
-    color: #86868B;
-}
-
-.headerSmall {
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 32px;
-    color: #282829;
-}
-
-.bloodbankCard {
-    //width: 50%;
-    gap: 24px;
-    padding: 0;
-}
-
-.bloodbankImage {
-    max-height: 240px;
-    max-width: 496px;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-}
-
-.bloodbankInfo {
-    padding: 16px 24px;
-    background-color: #FFFFFF;
-    max-width: 448px;
-    border-radius: 10px;
+/* Header Mobile Styles */
+.menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {
-    .topMenu {
-        flex-direction: column;
-        align-items: flex-start;
+  .menuToggle {
+    display: block;
+  }
+
+  .header {
+    position: relative; /* Add this */
+    z-index: 1000; /* Ensure header stays on top */
+  }
+
+  .nav {
+    display: none;
+    position: fixed; /* Changed from absolute */
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 999; /* Ensure it's below header but above content */
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    top: 70px;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  /* Add backdrop for better visibility */
+  .nav.active::after {
+   
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+/* Ensure content below header has proper spacing */
+.main {
+  position: relative;
+  z-index: 1; /* Lower than nav */
+  margin-top: 60px;
+
+  .loginBtn {
+    margin-top: 1rem;
+  }
+}
+
+
+.signOut {
+  background-color: #0066cc;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.alertBanner {
+  background-color: #ffebee;
+  padding: 24px;
+  border-radius: 8px;
+  margin: 24px 0;
+  //text-align: center;
+}
+
+.alertBanner h2 {
+  color: #e31b23;
+  margin-bottom: 8px;
+}
+
+.donateBtn {
+  background-color: #e31b23;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 16px;
+  cursor: pointer;
+}
+
+.profileSection {
+  display: grid;
+  grid-template-columns:  1fr 1fr;
+  gap: 24px;
+  margin: 32px 0;
+}
+.profileHeader{
+  display: flex;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 20px;
+//  align-items: center;
+  //margin-bottom: 24px;
+}
+.userProfile{
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.profileInfo h1 {
+  margin-bottom: 16px;
+}
+
+.requestBtn {
+  background-color: #333;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  margin-top: 16px;
+  cursor: pointer;
+}
+
+.profilePic {
+  border-radius: 50%;
+  margin-bottom: 12px;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 32px 0;
+}
+
+.statCard {
+  background-color: #f5f5f5;
+  padding: 24px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.statCard h3 {
+  color: #e31b23;
+  margin-bottom: 8px;
+}
+
+.impactMessage {
+  //text-align: center;
+  margin: 40px 0;
+}
+
+.highlight {
+  color: #e31b23;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin: 40px 0;
+}
+
+.testimonialCard {
+  background-color: #f5f5f5;
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.testimonialCard h3 {
+  margin-bottom: 16px;
+}
+
+.testimonialAuthor {
+  display: block;
+  margin-top: 16px;
+  color: #666;
+  font-style: italic;
+}
+
+.bloodbankSection {
+  margin: 40px 0;
+}
+
+.bloodbankGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.bloodbankCard {
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.bloodbankCard h3 {
+  padding: 16px;
+  margin: 0;
+}
+
+.bloodbankCard p {
+  padding: 0 16px 16px;
+  color: #666;
+}
+
+.eventsSection {
+  margin: 40px 0;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.eventsLink {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.eventsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.eventCard {
+  background-color: white;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.eventInfo {
+  padding: 16px;
+}
+
+.eventDate {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.signupBtn {
+  background-color: #0066cc;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  margin: 16px 0;
+  cursor: pointer;
+}
+
+.registeredCount {
+  color: #666;
+  font-size: 0.9em;
+}
+
+// .footer {
+//   margin-top: 60px;
+//   padding: 40px 0;
+//   border-top: 1px solid #eee;
+// }
+
+// .footerContent {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: flex-start;
+// }
+
+// .footerLinks {
+//   display: flex;
+//   gap: 24px;
+// }
+
+// .footerLinks a {
+//   color: #666;
+//   text-decoration: none;
+// }
+.phone {
+  color: #4b5563;
+}
+/* footer.module.css */
+.footer {
+  background-color: #F3F3F3;
+  padding: 32px 0;
+}
+
+.footer_inner{
+  padding-right:20px;
+  padding-left:20px;
+}
+
+.borderTop {
+  height: 3px;
+  background-color: #FF0000;
+  width: 100%;
+}
+
+.content {
+  padding-top: 24px;
+  position: relative;
+}
+
+.mainInfo {
+  margin-bottom: 24px;
+}
+
+.brand {
+  color: #FF0000;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.phone {
+  color: #333333;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.topLinks {
+  position: absolute;
+  top: 24px;
+  right: 0;
+  display: flex;
+  gap: 24px;
+}
+
+.topLinks a {
+  color: #3E3E3E;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.links {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+.links a {
+  color: #3E3E3E;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.copyright {
+  color: #3E3E3E;
+  font-size: 14px;
+  float: right;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 2rem;
+}
+
+.socialLinks a {
+  text-decoration: none;
+  color: #4b5563;
+  font-size: 0.875rem;
+}
+
+.copyright {
+  color: #666;
+  font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+  /* Profile Section */
+  .profileSection {
+    grid-template-columns: 1fr;
+  }
+  .profileHeader{
+    display: block;
+  }
+
+  /* Stats Grid */
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Testimonials */
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .footer .container {
+    padding: 0 1rem;
+  }
+  .content {
+      padding-top: 1rem;
     }
-    
-    .cardsContainer {
-        flex-direction: column;
+  
+    .topLinks {
+      position: static;
+      margin-top: 1rem;
+      justify-content: flex-start;
     }
-    
-    .fullWidthCard {
-        padding: 20px;
+  
+    .links {
+      flex-direction: column;
+      gap: 1rem;
     }
-    
-    .bloodbankCard {
-        width: 100%;
-    }
+
+  /* Blood Bank Grid */
+  .bloodbankGrid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Events Grid */
+  .eventsGrid {
+    grid-template-columns: 1fr;
+  }
+
+
+
+ 
 }

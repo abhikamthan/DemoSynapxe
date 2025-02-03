@@ -1,6 +1,41 @@
+"use client";
+import Link from 'next/link';
 import styles from './style.module.scss';
+import Toast from 'awesome-toast-component';
+import { useRouter } from "next/navigation";
+
 
 export default function AppointmentPage() {
+
+  // const toast = () => {
+  //   new Toast(`Appointment added`, {
+  //     style: {
+  //         container: [
+  //             ['background-color', 'green']
+  //         ],
+  //         message: [
+  //             ['color', '#FFF'],
+  //         ]
+  //     }
+  //   });
+  // }
+  const router = useRouter();
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+   // e.preventDefault(); // Prevent default navigation
+    new Toast(`Appointment added`, {
+      style: {
+          container: [
+            ['background-color', 'green'],
+          ],
+          message: [
+              ['color', '#FFF'],
+          ]
+      }
+    });
+    setTimeout(() => {
+      router.push("/");
+    }, 1000);
+  };
     return (
       <div>
         <h2 className={styles.heading}>Book an appointment</h2>
@@ -41,7 +76,8 @@ export default function AppointmentPage() {
               <label htmlFor="item7">I am not taking prescription medication(s).</label>
             </li>
           </ul>
-          <input type="button" className={styles.continueBtn} value="Continue" />
+        {/* //  <input type="button" className={styles.continueBtn} value="Continue" /> */}
+        <Link href="/" onClick={handleClick} className={styles.continueBtn}>Continue</Link>
         </div>
       </div>
     );

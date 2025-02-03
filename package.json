@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "-": "^0.0.1",
+    "awesome-toast-component": "^2.0.6",
     "g": "^2.0.1",
     "next": "15.1.6",
     "react": "^19.0.0",
