@@ -41,8 +41,9 @@ export default function Home() {
 
       <div className={styles.alertBanner}>
         <h2>We need more O+ Blood type</h2>
-        <p>Be a life-saver. Donate today and save lives tomorrow.</p>
-        <button className={styles.donateBtn}>Donate now</button>
+        <p>Be a life-saver. Donate today and save lives tomorrow.</p><br></br>
+        {/* <button className={styles.donateBtn}>Donate now</button> */}
+        <Link href="/appoinment" className={styles.donateBtn}>Donate now</Link>
       </div>
 
       <div className={styles.profileSection}>
@@ -50,8 +51,9 @@ export default function Home() {
         <div className={styles.profileInfo}>
           <h1>Hello, Cindy!</h1>
           <p>It looks like you are ready to donate blood.</p>
-          <p>Check today's request.</p>
-          <button className={styles.requestBtn}>Donation request</button>
+          <p>Check today's request.</p><br></br>
+          {/* <button className={styles.requestBtn}>Donation request</button> */}
+          <Link href="/appoinment" className={styles.requestBtn}>Donation request</Link>
         </div>
         <div className={styles.bloodIcon}>
           <Image src="/hand.svg" alt="Blood donation" width={100} height={100} />
@@ -137,7 +139,7 @@ export default function Home() {
               <span className={styles.eventDate}>1 Feb 2025, Saturday</span>
               <h3>Blood donation with Rotary Club of Singapore</h3>
               <p>Singapore House</p>
-              <button className={styles.signupBtn}>Sign up now</button>
+              {/* <button className={styles.signupBtn}>Sign up now</button> */}
               <p className={styles.registeredCount}>56 people REGISTERED</p>
             </div>
           </div>
@@ -149,7 +151,7 @@ export default function Home() {
               <span className={styles.eventDate}>22 Feb 2025, Wednesday</span>
               <h3>Blood donation with Woodlands CC</h3>
               <p>Woodlands Community club</p>
-              <button className={styles.signupBtn}>Sign up now</button>
+              {/* <button className={styles.signupBtn}>Sign up now</button> */}
               <p className={styles.registeredCount}>88 people REGISTERED</p>
             </div>
           </div>

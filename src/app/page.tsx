@@ -63,7 +63,8 @@ export default function Home() {
                                     Make a <span className={styles.red}>lasting</span> legacy
                                 </h1>
                                 <p>It's often the smallest threads that weave the most profound stories. We invite you to discover the extraordinary power hidden within the simplicity of everday acts .</p>
-                                <button className={styles.redBtn}>Find out more</button>
+                                {/* <button className={styles.redBtn}>Donate Now</button> */}
+                                <Link href="/appoinment" className={styles.redBtn}>Donate Now</Link>
                             </div>
                             <div className={styles.heroRight}>
                                 <div className={styles.imageContainer}>
@@ -202,8 +203,9 @@ export default function Home() {
                         </div>
 
                         <div className={styles.bloodButtons}>
-                            <button className={styles.redBtn}>Donate now</button>
-                            <button className={styles.outlineBtn}>Where to donate?</button>
+                            <Link href="/appoinment" className={styles.redBtn}>Donate Now</Link>
+                            <Link href="/appoinment" className={styles.outlineBtn}>Where to donate?</Link>
+                            {/* <button className={styles.outlineBtn}>Where to donate?</button> */}
                         </div>
                     </section>
 
@@ -278,8 +280,9 @@ export default function Home() {
                         <h2>Donate blood, save lives.</h2>
                         <p>Your contribution matters and donating blood is easier than you think!</p>
                         <div className={styles.ctaButtons}>
-                            <button className={styles.redBtn}>Donate now</button>
-                            <button className={styles.outlineBtn}>Find out more</button>
+                            <Link href="/appoinment" className={styles.redBtn}>Donate Now</Link>
+                            {/* <button className={styles.outlineBtn}>Find out more</button> */}
+                            <Link href="/appoinment" className={styles.outlineBtn}>Find out more</Link>
                         </div>
                     </section>
                 </main>
