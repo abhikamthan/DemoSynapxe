@@ -1,8 +1,10 @@
 "use client";
 import Link from 'next/link';
 import styles from './style.module.scss';
+import Image from 'next/image';
 import Toast from 'awesome-toast-component';
 import { useRouter } from "next/navigation";
+import { useState } from 'react';
 
 
 export default function AppointmentPage() {
@@ -20,6 +22,7 @@ export default function AppointmentPage() {
   //   });
   // }
   const router = useRouter();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
    // e.preventDefault(); // Prevent default navigation
     new Toast(`Appointment added`, {
@@ -37,6 +40,36 @@ export default function AppointmentPage() {
     }, 1000);
   };
     return (
+      <div className={styles.container}>
+      <header className={styles.header} >
+      <div className={styles.headerContent}>
+          <div className={styles.logo}>
+              {/* Replace with actual logo */}
+              <Image
+                  src="/SGLogo.svg" // Save the first image as lifelink-logo.png
+                  alt="LifeLink.SG"
+                  width={120}
+                  height={30}
+                  className={styles.logo}
+              />
+          </div>
+          <button
+              className={styles.menuToggle}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+              ☰
+          </button>
+          <nav className={`${styles.nav} ${isMenuOpen ? styles.active : ''}`}>
+              <Link href="/">Home</Link>
+              <Link href="/loggedin">Account Home</Link>
+              <Link href="/appoinment">Make an appointment</Link>
+              <Link href="/loggedin">Appointment history</Link>
+              <Link href="/loggedin">Resources</Link>
+              <Link href="/loggedin">About You</Link>
+              <Link href="/" className={styles.loginBtn}>Sign out</Link>
+          </nav>
+      </div>
+  </header>
       <div>
         <h2 className={styles.heading}>Book an appointment</h2>
   
@@ -79,6 +112,28 @@ export default function AppointmentPage() {
         {/* //  <input type="button" className={styles.continueBtn} value="Continue" /> */}
         <Link href="/" onClick={handleClick} className={styles.continueBtn}>Continue</Link>
         </div>
+      </div>
+      <footer className={styles.footer}>
+                    <div className={styles.footer_inner}>
+                        <div className={styles.borderTop}></div>
+                        <div className={styles.content}>
+                            <div className={styles.mainInfo}>
+                                <div className={styles.brand}>LifeLink.SG</div>
+                                <div className={styles.phone}>You can call us on: 6000 8888</div>
+                            </div>
+                            <div className={styles.topLinks}>
+                                <a href="/contact">Contact</a>
+                                <a href="/feedback">Feedback</a>
+                            </div>
+                        </div>
+                        <div className={styles.links}>
+                            <a href="/report">Report Vulnerability </a>
+                            <a href="/privacy">Privacy Statement</a>
+                            <a href="/terms">Terms of use</a>
+                        </div>
+                        <div className={styles.copyright}>© 2025 LifeLink.SG</div>
+                    </div>
+                </footer>
       </div>
     );
   }

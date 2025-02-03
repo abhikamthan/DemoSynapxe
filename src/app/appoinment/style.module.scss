@@ -1,4 +1,109 @@
 /* pages/appointment.module.css */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.header {
+  //position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid #e5e7eb;
+  z-index: 1000;
+}
+
+.headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav a {
+  text-decoration: none;
+  //color: #fff;
+  font-size: 0.875rem;
+}
+
+.loginBtn {
+  background: #1d4ed8;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+/* Header Mobile Styles */
+.menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .menuToggle {
+    display: block;
+  }
+
+  .header {
+    position: relative; /* Add this */
+    z-index: 1000; /* Ensure header stays on top */
+  }
+
+  .nav {
+    display: none;
+    position: fixed; /* Changed from absolute */
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 999; /* Ensure it's below header but above content */
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+    top: 70px;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  /* Add backdrop for better visibility */
+  .nav.active::after {
+   
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+/* Ensure content below header has proper spacing */
+.main {
+  position: relative;
+  z-index: 1; /* Lower than nav */
+  margin-top: 60px;
+
+  .loginBtn {
+    margin-top: 1rem;
+  }
+}
 .heading {
     text-align: left;
     margin: 20px;
@@ -52,6 +157,92 @@
   .continueBtn:hover {
     background-color: green;
   }
+  .footer {
+    background-color: #F3F3F3;
+    padding: 32px 0;
+  }
+  
+  .footer_inner{
+    padding-right:20px;
+    padding-left:20px;
+  }
+  
+  .borderTop {
+    height: 3px;
+    background-color: #FF0000;
+    width: 100%;
+  }
+  
+  .content {
+    padding-top: 24px;
+    position: relative;
+  }
+  
+  .mainInfo {
+    margin-bottom: 24px;
+  }
+  
+  .brand {
+    color: #FF0000;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  
+  .phone {
+    color: #333333;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .topLinks {
+    position: absolute;
+    top: 24px;
+    right: 0;
+    display: flex;
+    gap: 24px;
+  }
+  
+  .topLinks a {
+    color: #3E3E3E;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .links {
+    display: flex;
+    gap: 32px;
+    margin-bottom: 24px;
+  }
+  
+  .links a {
+    color: #3E3E3E;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  
+  .copyright {
+    color: #3E3E3E;
+    font-size: 14px;
+    float: right;
+  }
+  
+  .socialLinks {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .socialLinks a {
+    text-decoration: none;
+    color: #4b5563;
+    font-size: 0.875rem;
+  }
+  
+  .copyright {
+    color: #666;
+    font-size: 0.9em;
+  }
+  
   
   @media (max-width: 768px) {
     .heading {
@@ -76,4 +267,23 @@
       margin-left: auto;
       margin-right: auto;
     }
+    .footer .container {
+      padding: 0 1rem;
+    }
+    .content {
+        padding-top: 1rem;
+      }
+    
+      .topLinks {
+        position: static;
+        margin-top: 1rem;
+        justify-content: flex-start;
+      }
+    
+      .links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+  
   }
+ 

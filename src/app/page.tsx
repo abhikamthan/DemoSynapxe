@@ -98,8 +98,8 @@ export default function Home() {
                                 <Image
                                     src="/caro1.svg" // Replace with actual image
                                     alt="Personal stories from recipients"
-                                    width={300}
-                                    height={200}
+                                    width={527}
+                                    height={323}
                                     objectFit="cover"
                                 />
                                 <h3>The human side of blood donation: Personal stories from recipients</h3>
@@ -109,8 +109,8 @@ export default function Home() {
                                 <Image
                                     src="/caro2.svg" // Replace with actual image
                                     alt="Emergency preparedness"
-                                    width={300}
-                                    height={200}
+                                    width={527}
+                                    height={323}
                                     objectFit="cover"
                                 />
                                 <h3>Emergency preparedness: Blood reserves and disasters response</h3>
@@ -118,10 +118,10 @@ export default function Home() {
                             </div>
                             <div className={styles.card}>
                                 <Image
-                                    src="/caro3.svg" // Replace with actual image
+                                    src="/Location1.png" // Replace with actual image
                                     alt="Blood products"
-                                    width={300}
-                                    height={200}
+                                    width={527}
+                                    height={323}
                                     objectFit="cover"
                                 />
                                 <h3>Blood products: How does it help patients with unique needs</h3>
@@ -243,7 +243,7 @@ export default function Home() {
                                 <Image
                                     src="/Location1.png" // Replace with actual image
                                     alt="Bloodbank @ HSA"
-                                    width={350}
+                                    width={527}
                                     height={200}
                                     objectFit="cover"
                                 />
@@ -254,7 +254,7 @@ export default function Home() {
                                 <Image
                                     src="/Location2.png" // Replace with actual image
                                     alt="Bloodbank @ Dhoby Ghaut"
-                                    width={350}
+                                    width={527}
                                     height={200}
                                     objectFit="cover"
                                 />
@@ -265,7 +265,7 @@ export default function Home() {
                                 <Image
                                     src="/Location3.png" // Replace with actual image
                                     alt="Bloodbank @ Woodlands"
-                                    width={350}
+                                    width={527}
                                     height={200}
                                     objectFit="cover"
                                 />

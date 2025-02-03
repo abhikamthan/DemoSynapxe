@@ -111,52 +111,38 @@ export default function Home() {
         <h2>Bloodbank near you</h2>
         <div className={styles.bloodbankGrid}>
           <div className={styles.bloodbankCard}>
-            <Image src="/near1.svg" alt="Bloodbank @ Westgate Tower" width={300} height={200} />
+            <Image src="/near1.svg" alt="Bloodbank @ Westgate Tower" width={610} height={323} />
             <h3>Bloodbank @ Westgate Tower</h3>
             <p>Westgate Tower (Landing East MRT Station, Exit D, walk through Westgate) 1 Gateway Drive #10-01 to 05 Singapore 608531</p>
             <p>Open until 8pm</p>
           </div>
           <div className={styles.bloodbankCard}>
-            <Image src="/near2.svg" alt="Bloodbank @ Woodlands" width={300} height={200} />
+            <Image src="/near2.svg" alt="Bloodbank @ Woodlands" width={610} height={323} />
             <h3>Bloodbank @ Woodlands</h3>
             <p>Woodlands Civic Centre (Opposite Causeway Point) 900 South Woodlands Drive #05-07 Singapore 730900</p>
             <p>Open until 8pm</p>
           </div>
         </div>
       </div>
-
-      <div className={styles.eventsSection}>
-        <div className={styles.sectionHeader}>
-          <h2>Upcoming events</h2>
-          <a href="#" className={styles.eventsLink}>Events</a>
-        </div>
-        <div className={styles.eventsGrid}>
-          <div className={styles.eventCard}>
-            <div className={styles.eventImage}>
-              <Image src="/event1.svg" alt="Rotary Club event" width={300} height={200} />
-            </div>
-            <div className={styles.eventInfo}>
-              <span className={styles.eventDate}>1 Feb 2025, Saturday</span>
-              <h3>Blood donation with Rotary Club of Singapore</h3>
-              <p>Singapore House</p>
-              {/* <button className={styles.signupBtn}>Sign up now</button> */}
-              <p className={styles.registeredCount}>56 people REGISTERED</p>
-            </div>
+      <div className={styles.bloodbankSection}>
+        <h2>Upcoming events</h2>
+        <div className={styles.bloodbankGrid}>
+          <div className={styles.bloodbankCard}>
+            <Image src="/Location2.png" alt="Bloodbank @ Westgate Tower" width={610} height={323} />
+            
+            <p style={{marginTop:'10px'}}>Westgate Tower (Landing East MRT Station, Exit D, walk through Westgate) 1 Gateway Drive #10-01 to 05 Singapore 608531</p>
+            <p>56 People Registerd</p>
           </div>
-          <div className={styles.eventCard}>
-            <div className={styles.eventImage}>
-              <Image src="/event2.svg" alt="Woodlands CC event" width={300} height={200} />
-            </div>
-            <div className={styles.eventInfo}>
-              <span className={styles.eventDate}>22 Feb 2025, Wednesday</span>
-              <h3>Blood donation with Woodlands CC</h3>
-              <p>Woodlands Community club</p>
-              {/* <button className={styles.signupBtn}>Sign up now</button> */}
-              <p className={styles.registeredCount}>88 people REGISTERED</p>
-            </div>
+          <div className={styles.bloodbankCard}>
+            <Image src="/Location1.png" alt="Bloodbank @ Woodlands" width={610} height={323} />
+          <br></br>
+            <p style={{marginTop:'10px'}}>Woodlands Civic Centre (Opposite Causeway Point) 900 South Woodlands Drive #05-07 Singapore 730900</p>
+            <p>88 People Registerd</p>
           </div>
         </div>
       </div>
+
+      
 
       <footer className={styles.footer}>
                     <div className={styles.footer_inner}>
